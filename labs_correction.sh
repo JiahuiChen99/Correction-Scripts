@@ -34,6 +34,11 @@ then
     check_distribution
 fi
 
+# Directories for National & Internatinal Group
+mkdir GI GIA
+
 # Decompress zip
 zipname=$1
-unzip $zipname
+zipanme2=$2
+unzip $zipname -d ./GI
+unzip $zipname2 -d ./GIA
