@@ -40,5 +40,13 @@ mkdir GI GIA
 # Decompress zip
 zipname=$1
 zipanme2=$2
-unzip $zipname -d ./GI
-unzip $zipname2 -d ./GIA
+unzip $zipname -d ./GI && unzip $zipname2 -d ./GIA
+
+for compressed ./GI/*.tar.gz; do
+  # Extract the name of the student
+  student_folder= ${compressed%%_*}
+  # Create a folder for the student assignment
+  mkdir $student_folder
+  # Decompress files to the newly created folder
+  tar -xvf $compressed -C ./$student_folder
+done
