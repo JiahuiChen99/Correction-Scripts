@@ -42,7 +42,7 @@ zipname=$1
 zipname2=$2
 unzip $zipname -d ./GI && unzip $zipname2 -d ./GIA
 
-for compressed ./GI/*.tar.gz; do
+for compressed in ./GI/*.tar.gz; do
   # Extract the name of the student
   student_folder= ${compressed%%_*}
   # Create a folder for the student assignment
