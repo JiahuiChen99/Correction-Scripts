@@ -39,7 +39,7 @@ mkdir GI GIA
 
 # Decompress zip
 zipname=$1
-zipanme2=$2
+zipname2=$2
 unzip $zipname -d ./GI && unzip $zipname2 -d ./GIA
 
 for compressed ./GI/*.tar.gz; do
