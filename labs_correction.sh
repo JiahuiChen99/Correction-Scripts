@@ -46,7 +46,7 @@ for compressed in ./GI/*.tar.gz; do
   # Extract the name of the student
   student_folder=${compressed%%_*}
   # Create a folder for the student assignment remove ./GI/
-  mkdir ${student_folder##*/}
+  mkdir "$student_folder"
   # Decompress files to the newly created folder
-  tar -xvf $compressed -C $student_folder
+  tar -xvf "$compressed" -C "$student_folder"
 done
